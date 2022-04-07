@@ -36,8 +36,8 @@ void sort(ll **head){
 			              
 	            if(temp1->number > temp2->number){  
 	                tempValue = temp1->number;  
-	                	temp1->number = temp2->number;  
-	                		temp2->number = tempValue;  
+	                temp1->number = temp2->number;  
+	                temp2->number = tempValue;  
 	            }  
 	        	temp2 = temp2->next;  
 	        }  
@@ -93,9 +93,9 @@ int depthLevel(bst* tree, int value){
     	if ((tree->data == value) )
         	return distance + 1;
         		if(( distance = depthLevel(tree->left , value)) >= 0)
-					return distance + 1;
+				return distance + 1;
         				if((distance = depthLevel(tree->right , value)) >= 0)
-							return distance + 1;
+						return distance + 1;
 	}
 	else
         return -1;
@@ -109,8 +109,8 @@ bst* makeBalancedTree(int array[], int startPoint, int endPoint){
 		
 		bst* tree = malloc(sizeof(bst));
 		tree->data = array[(startPoint + endPoint)/2] ; 		 
-	  		tree->left = makeBalancedTree(array, startPoint , (startPoint + endPoint) / 2 - 1);
-	   			 tree->right = makeBalancedTree(array, (startPoint + endPoint) / 2 + 1 , endPoint);
+	  	tree->left = makeBalancedTree(array, startPoint , (startPoint + endPoint) / 2 - 1);
+	   	tree->right = makeBalancedTree(array, (startPoint + endPoint) / 2 + 1 , endPoint);
 		return tree;
 	}	
   return NULL;
@@ -119,16 +119,16 @@ bst* makeBalancedTree(int array[], int startPoint, int endPoint){
 void arrangeBst(bst *arrangeTree,int arr[] , int length){
 	
 	bst* temp = arrangeTree;
-		bst* current = temp;
-			bst* prev = NULL;
-				bst* pprev = NULL;
+	bst* current = temp;
+	bst* prev = NULL;
+	bst* pprev = NULL;
 	
 	while(temp!=NULL){
 		
 		pprev=prev;
-			prev=current;
-				current=temp;
-					temp=temp->right;
+		prev=current;
+		current=temp;
+		temp=temp->right;
 	}
 	int i;
 			for( i = 0 ; i < length ; i++){
@@ -172,11 +172,11 @@ int main(){
 		int i,j; //index variables for loops...
 		
 		ll* list = NULL;
-			bst* tree = NULL;
-				FILE *fp  = fopen("input.txt","r" );
-					if( fp == NULL ){
-						printf("file cant be opened\n");exit(0);
-					}
+		bst* tree = NULL;
+		FILE *fp  = fopen("input.txt","r" );
+			if( fp == NULL ){
+				printf("file cant be opened\n");exit(0);
+			}
 						
 // numbers are readed into linked list...
 
